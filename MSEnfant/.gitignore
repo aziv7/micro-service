@@ -30,9 +30,3 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
-mvnw
-mvnw.cmd
-pom.xml
-.mvn/
-Database/

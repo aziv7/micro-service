@@ -1,0 +1,6 @@
+#FileLock
+#Fri Oct 22 20:48:32 GMT+01:00 2021
+server=192.168.8.1\:55187
+hostName=WINDOWSLENO
+method=file
+id=17ca98c3a894160ffe1163b0d8031b9dd381319520e

@@ -18,7 +18,7 @@ public class Group implements Serializable {
 	
 	private String title;
 	private String description;
-	private int teacher;
+
 	
 	public int getId() {
 		return id;
@@ -41,18 +41,12 @@ public class Group implements Serializable {
 	public Group() {
 		super();
 	}
-	public Group(String title, String description,int teacher) {
+	public Group(String title, String description) {
 		super();
 		this.title = title;
 		this.description = description;
-		this.teacher = teacher;
 	}
-	public int getTeacher() {
-		return teacher;
-	}
-	public void setTeacher(int teacher) {
-		this.teacher = teacher;
-	}
+
 	
 	
 }

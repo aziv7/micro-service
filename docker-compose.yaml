@@ -1,0 +1,49 @@
+version: "3.9"
+services:
+  discovery:
+    build:  ../../discovery-server
+    ports:
+      - "8761:8761"
+    image: "discovery-service"
+  enseignant-service:
+    build: ../../enseignant-service
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8180:8180"
+    image: "enseignant-service"
+  group-service:
+    build: ../../micro-service-alaabranch
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8181:8181"
+    image: "group-service"
+  activite-service:
+    build: ../../activite-service
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8182:8182"
+    image: "activite-service"
+  parent-service:
+    build: ../../parent-micro
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8183:8183"
+    image: "parent-service"
+  enfant-service:
+    build: ../../MSEnfant
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8184:8184"
+    image: "enfant-service"
+  gateway:
+    build: ../../zuul-server
+    environment: 
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8762:8762"
+    image: "gateway-server"
